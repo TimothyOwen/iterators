@@ -42,7 +42,7 @@ public class Numbers2 {
 		
 	}
 	public static String fourthHighers(int num2) {
-		String answer = "error";
+		String answer = "";
 		if(num2==1000) {answer="One Thousand";}
 		if(num2==2000) {answer="Two Thousand";}
 		if(num2==3000) {answer="Three Thousand";}
@@ -92,7 +92,7 @@ public class Numbers2 {
 			k = thirdHighers(m*100);
 			j = secondHighers(num2-m*100-o);
 			l = primitives(o);
-			answer = k + " and " + j + " " + l;
+			answer = k + " " + j + " " + l;
 		}
 		if(num2>1000 && num2%1000!=0) {
 			String i = String.valueOf(num2);
@@ -108,7 +108,7 @@ public class Numbers2 {
 			j = thirdHighers(num2-n*1000-p*10-q);
 			l = secondHighers(num2-n*1000-o*100-q);
 			m = primitives(q);
-			answer = k + " " + j + " and " + l + " " + m;
+			answer = k + " " + j + " " + l + " " + m;
 		}
 		if(num2%10==0 && num2<100) {answer = secondHighers(num2);}
 		if(num2%100==0 && num2<1000) {answer = thirdHighers(num2);}
@@ -116,6 +116,8 @@ public class Numbers2 {
 		return answer;
 	}
 	public static void main(String[] args) {
-		System.out.println("\n"+numMethod2(1000));
+		for(int i=0; i<10000; i++) {
+			System.out.println("\n"+numMethod2(i));
+		}
 	}
 }
